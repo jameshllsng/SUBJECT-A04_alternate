@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private InputAction jumpAction;
     private float verticalVelocity = 0f;
-    [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float gravity = -15f;
+    [SerializeField] private float jumpForce = 5.5f;
 
 
     private void Awake()
