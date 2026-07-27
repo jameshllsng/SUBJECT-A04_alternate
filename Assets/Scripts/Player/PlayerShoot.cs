@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,10 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerShoot : MonoBehaviour
 {
     private InputAction fireAction;
+    private Transform playerCamera;
+    [SerializeField] private float weaponRange = 100f;
 
     private void Start()
     {
-        
+        playerCamera = Camera.main.transform;
         fireAction = InputSystem.actions.FindAction("Fire");
     }
 
@@ -16,7 +19,16 @@ public class PlayerShoot : MonoBehaviour
     {
         if (fireAction.WasPressedThisFrame())
         {
-            Debug.Log("Disparo!");
+            Shoot();
         }
     }
+
+    private void Shoot()
+    {
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out RaycastHit hit, weaponRange))
+        {   
+            Debug.Log(hit.collider.name, hit.distance);
+        }
+    }
+    
 }
