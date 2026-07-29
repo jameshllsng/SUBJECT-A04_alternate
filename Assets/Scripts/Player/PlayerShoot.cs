@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Physics.Raycast(playerCamera.position, playerCamera.forward, out RaycastHit hit, weaponRange))
         {   
-            Debug.Log(hit.collider.name, hit.distance);
+            Debug.Log("Objeto:" + hit.collider.name + "Distância" + hit.distance);
         }
     }
     
