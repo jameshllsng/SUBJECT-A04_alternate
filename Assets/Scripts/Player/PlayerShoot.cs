@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
     private InputAction fireAction;
     private Transform playerCamera;
     [SerializeField] private float weaponRange = 100f;
-    [SerializeField] private float weaponDamage = 25f;
+    [SerializeField] private float weaponDamage = 20f;
 
     private void Start()
     {
